@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GOPrefab: {fileID: 2072286209758901769, guid: 8c084418b8e124b97afadb67584715d6, type: 3}
-  X: 100
-  Y: 10
-  Z: 100
+  X: 1000
+  Y: 1
+  Z: 1000
 --- !u!4 &641787243
 Transform:
   m_ObjectHideFlags: 0
