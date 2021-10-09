@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4f6b57d3def4bf99a73cb53d77cad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GOPrefab: {fileID: 1516450283}
+  GOPrefab: {fileID: 2072286209758901769, guid: 8c084418b8e124b97afadb67584715d6, type: 3}
   X: 100
   Y: 10
-  Z: 10
+  Z: 100
 --- !u!4 &641787243
 Transform:
   m_ObjectHideFlags: 0
@@ -253,11 +253,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1516450283 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2072286209758901769, guid: 8c084418b8e124b97afadb67584715d6, type: 3}
-  m_PrefabInstance: {fileID: 2072286211006629858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1840496567
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072286209758901769, guid: 8c084418b8e124b97afadb67584715d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2072286209758901773, guid: 8c084418b8e124b97afadb67584715d6, type: 3}
       propertyPath: m_RootOrder
