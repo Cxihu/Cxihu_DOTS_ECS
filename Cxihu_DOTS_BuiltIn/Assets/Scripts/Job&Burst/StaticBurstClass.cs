@@ -3,10 +3,9 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
 [BurstCompile]
-public class StaticBurstClass
+public static class StaticBurstClass
 {
     [BurstCompile]
     public static float MathFunc()
@@ -14,7 +13,7 @@ public class StaticBurstClass
         float f = 0;
         for (int i = 0; i < 1000000; i++)
         {
-            f += math.sqrt(math.mul(Time.deltaTime, Time.deltaTime) * i);
+            f += math.sqrt(math.mul(99.9f, 88.8f) * i);
         }
         return f;
     }
