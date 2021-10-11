@@ -16,7 +16,8 @@ public class IJobMonoBehaviour : MonoBehaviour
         {
             for (int i = 0; i < lenth; i++)
             {
-                Debug.LogFormat("i:{0}", i);
+                string str = "i:" + i;
+                Debug.Log(str);
                 outtemp[0] += math.mul(0.5f, 2f) * i;
             }
 
