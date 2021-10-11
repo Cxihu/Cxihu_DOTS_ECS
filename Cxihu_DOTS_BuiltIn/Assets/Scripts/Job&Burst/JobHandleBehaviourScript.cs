@@ -15,7 +15,7 @@ public class JobHandleBehaviourScript : MonoBehaviour
         job3.forNArray = new NativeArray<int>(1000, Allocator.TempJob);
         job3.outtemp = new NativeArray<float>(1, Allocator.TempJob);
 
-        JobHandle jobHandle2 = job2.Schedule(job2.forNArray.Length, new JobHandle());
+        JobHandle jobHandle2 = job2.ScheduleParallel(job2.forNArray.Length,1000, new JobHandle());
         job3.Schedule(job3.forNArray.Length, 1000, jobHandle2).Complete();
         Debug.Log("job2.outtemp[0]:" + job2.outtemp[0]);
         Debug.Log("job3.outtemp[0]:" + job3.outtemp[0]);
