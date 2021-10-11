@@ -13,7 +13,7 @@ public struct Job3 : IJobParallelFor
     public void Execute(int index)
     {
         outtemp[0] += math.mul(0.5f, 2f) * index;
-        Debug.LogFormat("index:{0} ThreadId:{1}", index, System.Threading.Thread.CurrentThread.ManagedThreadId);
+        Debug.LogFormat("Job3 index:{0} ThreadId:{1}", index, System.Threading.Thread.CurrentThread.ManagedThreadId);
     }
 }
 public class IJobParaForMonoBehaviour : MonoBehaviour
