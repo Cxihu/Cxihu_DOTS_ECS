@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Collections;
+using Unity.Burst;
 
 public class IJobMonoBehaviour : MonoBehaviour
 {
-    // [BurstCompatible]
+    [BurstCompile]
     public struct Job1 : IJob
     {
-        public int lenth;//1000000
+        [ReadOnly]
+        public int lenth;//1000
         public NativeArray<float> outtemp;
         public void Execute()
         {
             for (int i = 0; i < lenth; i++)
             {
-                outtemp[0] += math.sqrt(math.mul(99.9f, 88.8f) * i);
+                Debug.LogFormat("i:{0}", i);
+                outtemp[0] += math.mul(0.5f, 2f) * i;
             }
 
         }
@@ -26,17 +27,16 @@ public class IJobMonoBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Main ThreadId: " + System.Threading.Thread.CurrentThread.ManagedThreadId);
         job1 = new Job1();
-        job1.lenth = 1000000;
+        job1.lenth = 1000;
         job1.outtemp = new NativeArray<float>(1, Allocator.TempJob);
-        //job1.Schedule().Complete();
-        //job1.outtemp.Dispose();
+        job1.Schedule().Complete();
     }
 
     // Update is called once per frame
     void Update()
     {
-        job1.Schedule().Complete();
         Debug.Log(job1.outtemp[0]);
     }
     private void OnDestroy()
