@@ -16,8 +16,7 @@ public class IJobMonoBehaviour : MonoBehaviour
         {
             for (int i = 0; i < lenth; i++)
             {
-                string str = "i:" + i;
-                Debug.Log(str);
+                Debug.LogFormat("Job1 i:{0} ThreadId:{1}", i, System.Threading.Thread.CurrentThread.ManagedThreadId);
                 outtemp[0] += math.mul(0.5f, 2f) * i;
             }
 

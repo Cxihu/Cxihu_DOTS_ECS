@@ -28,7 +28,7 @@ public class IJobForMonoBehaviour : MonoBehaviour
         job2.forNArray = new NativeArray<int>(1000, Allocator.TempJob);
         job2.outtemp = new NativeArray<float>(1, Allocator.TempJob);
         // job2.Schedule(job2.forNArray.Length, new JobHandle()).Complete();
-        job2.ScheduleParallel(job2.forNArray.Length, 1000, new JobHandle()).Complete();
+        job2.ScheduleParallel(job2.forNArray.Length, 64, new JobHandle()).Complete();
     }
 
     // Update is called once per frame
